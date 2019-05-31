@@ -4,5 +4,8 @@
 	"appPort": 9000,
 	"extensions": [
 		"alanz.vscode-hie-server"
+	],
+	"runArgs": [
+		"-m 4GB"
 	]
 }
