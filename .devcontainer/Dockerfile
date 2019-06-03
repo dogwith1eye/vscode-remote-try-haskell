@@ -9,6 +9,9 @@ RUN apt-get update \
 # Install haskell ide engine dependencies
 RUN apt-get -y install libicu-dev libtinfo-dev libgmp-dev
 
+# Create symlink bind directory for build or haskell ide engine
+RUN mkdir -p $HOME/.local/bin
+
 # Install haskell ide engine
 RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules \
     && cd haskell-ide-engine \
