@@ -16,7 +16,8 @@ RUN mkdir -p $HOME/.local/bin
 RUN git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules \
     && cd haskell-ide-engine \
     && sed -i "s|lts-13.18 # GHC 8.6.4|lts-13.23 # GHC 8.6.5 |g" shake.yaml \
-    && stack install.hs cabal-hie-8.6.5
+    && stack install.hs cabal-hie-8.6.5 \
+    && stack install.hs cabal-build-doc
 
 # Clean up
 RUN apt-get autoremove -y \
